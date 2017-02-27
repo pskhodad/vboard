@@ -1,0 +1,18 @@
+<ion-header color='primary'>
+  <ion-navbar color='primary'>
+    <ion-title>
+      vBoard
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()" [disabled]="isPlaying">
+        <ion-icon name="download"></ion-icon>
+      </button>    
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <svg id="quill" style="width: 100%; height: 100%;"></svg>
+  <ion-fab left bottom><button ion-fab color="danger" (click)="clr()" [disabled]="isPlaying"><ion-icon name="trash"></ion-icon></button></ion-fab>
+  <ion-fab right bottom><button ion-fab [color]="isPlaying ? 'danger' : 'primary'" (click)="play()"><ion-icon name="play"></ion-icon></button></ion-fab>
+</ion-content>
